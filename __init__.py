@@ -79,7 +79,6 @@ class PersistentDict:
         );
         """
         self._conn.execute(sql)
-        self._conn.execute("CREATE INDEX IF NOT EXISTS keys ON config (key);")
         if disk:
             self.fscache = FSCache(os.path.dirname(filename))
         else:
