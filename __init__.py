@@ -1,9 +1,5 @@
-__doc__ = """
-pdict has a dictionary like interface and a sqlite backend
-It uses pickle to store Python objects and strings, which are then compressed
-Multithreading is supported
-"""
 
+from __future__ import print_function
 import os
 import sys
 import datetime
@@ -21,8 +17,10 @@ except ImportError:
 
 
 class PersistentDict:
-    """Stores and retrieves persistent data through a dict-like interface
-    Data is stored compressed on disk using sqlite3 
+    """
+    pdict has a dictionary like interface and a sqlite backend
+    It uses pickle to store Python objects and strings, which are then compressed
+    Multithreading is supported
 
     filename: 
         where to store sqlite database. Uses in memory by default.
@@ -259,10 +257,10 @@ if __name__ == '__main__':
         else:
             parser.error('Must specify the key')
     elif options.key:
-        print cache[options.key]
+        print(cache[options.key])
     elif options.clear:
         if raw_input('Really? Clear the cache? (y/n) ') == 'y':
             cache.clear()
-            print 'cleared'
+            print('cleared')
     else:
         parser.error('No options selected')
