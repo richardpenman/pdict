@@ -6,7 +6,6 @@ import datetime
 import sqlite3
 import zlib
 import threading
-import md5
 import shutil
 import glob
 try:
