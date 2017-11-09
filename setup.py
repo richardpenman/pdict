@@ -6,7 +6,7 @@ def read(filename):
 
 setup(
     name='pdict', 
-    version='1.1',
+    version='1.3',
     packages=['pdict'],
     package_dir={'pdict' : '.'}, 
     author='Richard Penman',
