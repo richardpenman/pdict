@@ -65,7 +65,6 @@ class PersistentDict:
         self.expires = expires
         self.timeout = timeout
         self._conn = sqlite3.connect(filename, timeout=timeout, isolation_level=isolation_level, detect_types=sqlite3.PARSE_DECLTYPES|sqlite3.PARSE_COLNAMES)
-        self._conn.text_factory = lambda x: unicode(x, 'utf-8', 'replace')
         sql = """
         CREATE TABLE IF NOT EXISTS config (
             key TEXT NOT NULL PRIMARY KEY UNIQUE,
@@ -137,7 +136,7 @@ class PersistentDict:
         """convert compressed pickled string from database back into an object
         """
         if value:
-            return pickle.loads(zlib.decompress(value))
+            return pickle.loads(zlib.decompress(value), encoding='bytes')
 
 
     def is_fresh(self, t):
