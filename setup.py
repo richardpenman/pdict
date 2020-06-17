@@ -6,13 +6,13 @@ def read(filename):
 
 setup(
     name='pdict', 
-    version='1.4',
+    version='1.4.1',
     packages=['pdict'],
     package_dir={'pdict' : '.'}, 
     author='Richard Penman',
     author_email='richard.penman@gmail.com',
     description='pdict has a dictionary like interface and a sqlite backend',
     long_description=read('README.rst'),
-    url='https://bitbucket.org/richardpenman/pdict',
+    url='https://github.com/richardpenman/pdict',
     license='lgpl',
 )
